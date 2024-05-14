@@ -1,5 +1,4 @@
 <div align="center">
-
 ![Go-Proxy-BingAI](./docs/img/header.png)
 
 # Go-Proxy-BingAI
