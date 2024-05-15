@@ -4,6 +4,7 @@ import (
 	"adams549659584/go-proxy-bingai/common"
 	"encoding/json"
 	"net/http"
+	"strings"
 )
 
 type Response struct {
@@ -43,7 +44,17 @@ func CheckAuth(r *http.Request) bool {
 	isAuth := true
 	if len(common.AUTH_KEY) > 0 {
 		ckAuthKey, _ := r.Cookie(common.AUTH_KEY_COOKIE_NAME)
-		isAuth = ckAuthKey != nil && len(ckAuthKey.Value) > 0 && common.AUTH_KEY == ckAuthKey.Value
+		isAuth = ckAuthKey != nil && len(ckAuthKey.Value) > 0 && isKeyValid(ckAuthKey.Value)
 	}
 	return isAuth
+}
+
+func isKeyValid(key string) bool {
+	authKeys := strings.Split(common.AUTH_KEY, ",")
+	for _, k := range authKeys {
+		if k == key {
+			return true
+		}
+	}
+	return false
 }
