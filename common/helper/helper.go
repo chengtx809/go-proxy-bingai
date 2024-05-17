@@ -41,20 +41,10 @@ func UnauthorizedResult(w http.ResponseWriter) error {
 }
 
 func CheckAuth(r *http.Request) bool {
-	isAuth := true
-	if len(common.AUTH_KEY) > 0 {
-		ckAuthKey, _ := r.Cookie(common.AUTH_KEY_COOKIE_NAME)
-		isAuth = ckAuthKey != nil && len(ckAuthKey.Value) > 0 && isKeyValid(ckAuthKey.Value)
+	if len(common.AUTH_KEY) == 0 {
+		return true
 	}
-	return isAuth
-}
 
-func isKeyValid(key string) bool {
-	authKeys := strings.Split(common.AUTH_KEY, ",")
-	for _, k := range authKeys {
-		if k == key {
-			return true
-		}
-	}
-	return false
+	ckAuthKey, _ := r.Cookie(common.AUTH_KEY_COOKIE_NAME)
+	return ckAuthKey != nil && len(ckAuthKey.Value) > 0 && common.IsInArray(strings.Split(common.AUTH_KEY, ","), ckAuthKey.Value)
 }
