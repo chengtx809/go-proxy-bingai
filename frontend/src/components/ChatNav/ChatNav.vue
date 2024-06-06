@@ -117,7 +117,7 @@ let navConfigs = ref([
   },
   {
     key: navType.notebook,
-    label: '笔记本',
+    label: '笔记本（1.8w长文本）',
   },
   {
     key: navType.compose,
@@ -132,10 +132,10 @@ let navConfigs = ref([
     key: navType.reset,
     label: '一键重置',
   },
-  {
-    key: navType.about,
-    label: '关于'
-  },
+  // {
+  //   key: navType.about,
+  //   label: '关于'
+  // },
 ]);
 
 const themeModeOptions = ref([
@@ -152,18 +152,18 @@ const themeModeOptions = ref([
 ]);
 
 const uiVersionOptions = ref([
-  {
-    label: 'V1',
-    value: 'v1',
-  },
+  // {
+  //   label: 'V1',
+  //   value: 'v1',
+  // },
   {
     label: 'V2',
     value: 'v2',
   },
-  {
-    label: 'V3',
-    value: 'v3',
-  }
+  // {
+  //   label: 'V3',
+  //   value: 'v3',
+  // }
 ]);
 
 const langRegionOptions = ref([
