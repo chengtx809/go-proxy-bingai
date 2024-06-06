@@ -39,7 +39,7 @@ let cookiesEnable = ref(false);
 let cookies = ref('');
 let history = ref(true);
 let themeModeSetting = ref('auto');
-let uiVersionSetting = ref('v2');
+let uiVersionSetting = ref('v3');
 let langRegionSetting = ref('CN');
 let theme = ref(inject('theme'));
 let autoReopenMicSetting = ref(true);
@@ -157,13 +157,13 @@ const uiVersionOptions = ref([
     value: 'v1',
   },
   {
+    label: 'V2',
+    value: 'v2',
+  },
+  {
     label: 'V3',
     value: 'v3',
   }
-    {
-    label: 'V2（推荐）',
-    value: 'v2',
-  },
 ]);
 
 const langRegionOptions = ref([
