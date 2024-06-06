@@ -39,7 +39,7 @@ let cookiesEnable = ref(false);
 let cookies = ref('');
 let history = ref(true);
 let themeModeSetting = ref('auto');
-let uiVersionSetting = ref('v3');
+let uiVersionSetting = ref('v2');
 let langRegionSetting = ref('CN');
 let theme = ref(inject('theme'));
 let autoReopenMicSetting = ref(true);
@@ -157,13 +157,13 @@ const uiVersionOptions = ref([
     value: 'v1',
   },
   {
-    label: 'V2',
-    value: 'v2',
-  },
-  {
     label: 'V3',
     value: 'v3',
   }
+    {
+    label: 'V2（推荐）',
+    value: 'v2',
+  },
 ]);
 
 const langRegionOptions = ref([
@@ -214,7 +214,7 @@ const handleSelect = async (key: string) => {
         if (galileoIndex > -1) {
           CIB.config.sydney.request.optionsSets[galileoIndex] = 'galileo';
         }
-        if (uiVersion.value == 'v2') {
+        if (uiVersion.value == 'v3') {
           await sleep(25);
           await ChatHomeScreen.init('/turing/api/suggestions/v2/zeroinputstarter');
         }
@@ -429,7 +429,7 @@ const saveAdvancedSetting = () => {
         threadsContainer.style.display = 'block'
       }
     } else {
-      if (tmpuiVersion === 'v3') {
+      if (tmpuiVersion === 'v2') {
         threadsHeader.style.display = 'none'
         threadsContainer.style.display = 'none'
       } else {
