@@ -59,8 +59,8 @@ _w['_sydConvConfig'] = {
   enableVisualSearch: true,
   enableFileUploadDirect: true,
   disableWelcomeScreen: true,
-  enableWelcomeScreenV2: false,
-  enableWelcomeScreenV3: true,
+  enableWelcomeScreenV2: true,
+  enableWelcomeScreenV3: false,
   enableAIPersonasForDesktop: true,
   enableFileUploadOfficeFilesSupport: true,
   enableFileUploadAudioSupport: true,
@@ -114,7 +114,7 @@ _w['_sydConvConfig'] = {
   enable1pGPTPreLoadForCopilot: true,
   enableFreeSydneyV2Style: true,
   // Microsoft Designer
-  enableDesignerGPT: true,
+  enableDesignerGPT: false,
   // Phone UI Full Screen
   enableCopilotFullScreenUX: true,
   enableFullScreenIframe: true,
