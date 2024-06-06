@@ -4,7 +4,6 @@ import (
 	"adams549659584/go-proxy-bingai/common"
 	"encoding/json"
 	"net/http"
-	"strings"
 )
 
 type Response struct {
@@ -41,10 +40,12 @@ func UnauthorizedResult(w http.ResponseWriter) error {
 }
 
 func CheckAuth(r *http.Request) bool {
-	if len(common.AUTH_KEY) == 0 {
-		return true
+	isAuth := true
+	if len(common.AUTH_KEYS) > 0 {
+		if common.AUTH_KEYS[0] != "" {
+			ckAuthKey, _ := r.Cookie(common.AUTH_KEY_COOKIE_NAME)
+			isAuth = ckAuthKey != nil && len(ckAuthKey.Value) > 0 && common.IsInArray(common.AUTH_KEYS, ckAuthKey.Value)
+		}
 	}
-
-	ckAuthKey, _ := r.Cookie(common.AUTH_KEY_COOKIE_NAME)
-	return ckAuthKey != nil && len(ckAuthKey.Value) > 0 && common.IsInArray(strings.Split(common.AUTH_KEY, ","), ckAuthKey.Value)
+	return isAuth
 }

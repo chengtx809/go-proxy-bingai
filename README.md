@@ -1,7 +1,5 @@
 <div align="center">
 
-![Go-Proxy-BingAI](./docs/img/header.png)
-
 # Go-Proxy-BingAI
 
 基于微软 New Bing 定制的微软 BingAI 演示站点
