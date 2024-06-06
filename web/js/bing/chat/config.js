@@ -465,8 +465,8 @@ _w['_sydConvConfig'] = {
   multimediaSearchEnableMediaCanvas: true,
   multimediaSearchMaxImageCount: 5,
   // GPT 4 Turbo
-  enableTurboTone: false,
-  enableGPT4TurboSwitch: false,
+  enableTurboTone: true,
+  enableGPT4TurboSwitch: true,
 };
 _w['_sydThreads'] = {
   threads: [],
@@ -1624,7 +1624,7 @@ if (uiVersion == 'v1') {
   _w['_sydConvConfig']['enableGoldilocksUserMsgActionBar'] = false
   _w['_sydConvConfig']['enableFreeSydney'] = false
   _w['_sydConvConfig']['enableDesignerGPT'] = false
-} else if (uiVersion == 'v3') {
+} else if (uiVersion == 'v2') {
   _w['_sydConvConfig']['disableWelcomeScreen'] = true
   _w['_sydConvConfig']['enableWelcomeScreenV2'] = false
   _w['_sydConvConfig']['enableWelcomeScreenV3'] = true
