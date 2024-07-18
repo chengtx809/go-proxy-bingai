@@ -20,3 +20,5 @@ require (
 	golang.org/x/net v0.25.0 // indirect
 	golang.org/x/sys v0.20.0 // indirect
 )
+
+replace github.com/Harry-zklcdc/bing-lib => github.com/chengtx809/bing-lib v1.8.0
